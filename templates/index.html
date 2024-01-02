@@ -1,0 +1,23 @@
+<!-- FILEPATH: /Users/daniel.varela/personal_dev/fantasiAI/templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Page</title>
+</head>
+<body>
+    <form id="searchForm" action="{{ request.path }}" method="POST">
+        <input type="text" id="searchInput" name="searchQuery" placeholder="Enter your search query">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="searchResults">
+        {% if searchResults %}
+            <div class="result">
+                <h3>{{ searchResults.player_name }}</h3>
+                <p>{{ searchResults.xG }}</p>
+            </div>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
